@@ -5,7 +5,7 @@ UserService.updateOptions({ new: true })
 UserService.before('post', verificacao)
 
 function verificacao(req, res, next){
-  UserService.findOne({salaAtual: req.body.salaAtual}, function(err, user){
+  UserService.findOne({name: req.body.name}, function(err, user){
     if(err){
       return res.status(500).send('Falhou')
     }if(!user){

@@ -5,7 +5,7 @@ LoginService.updateOptions({ new: true })
 LoginService.before('post', verificacao)
 
 function verificacao(req, res, next){
-  LoginService.findOne({salaAtual: req.body.salaAtual}, function(err, user){
+  LoginService.findOne({username: req.body.username}, function(err, user){
     if(err){
       return res.status(500).send('Falhou')
     }if(!user){
