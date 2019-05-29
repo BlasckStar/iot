@@ -2,10 +2,10 @@ const UserService = require('./userTask')
 
 UserService.methods(['get', 'post', 'put', 'delete'])
 UserService.updateOptions({ new: true })
-KiranCycle.before('post', verificacao)
+LoginService.before('post', verificacao)
 
 function verificacao(req, res, next){
-  KiranCycle.findOne({salaAtual: req.body.salaAtual}, function(err, user){
+  LoginService.findOne({salaAtual: req.body.salaAtual}, function(err, user){
     if(err){
       return res.status(500).send('Falhou')
     }if(!user){
