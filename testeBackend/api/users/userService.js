@@ -2,10 +2,10 @@ const UserService = require('./userTask')
 
 UserService.methods(['get', 'post', 'put', 'delete'])
 UserService.updateOptions({ new: true })
-LoginService.before('post', verificacao)
+UserService.before('post', verificacao)
 
 function verificacao(req, res, next){
-  LoginService.findOne({salaAtual: req.body.salaAtual}, function(err, user){
+  UserService.findOne({salaAtual: req.body.salaAtual}, function(err, user){
     if(err){
       return res.status(500).send('Falhou')
     }if(!user){
