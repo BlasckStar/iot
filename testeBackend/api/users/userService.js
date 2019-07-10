@@ -16,4 +16,5 @@ function verificacao(req, res, next){
   })
 }
 
+
 module.exports = UserService
