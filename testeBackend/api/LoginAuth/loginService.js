@@ -29,5 +29,6 @@ function loginCheck(req, res, next){
 
 function deleteCheck(req, res, next){
   res.send('got  a Delete request at /user')
+  return res.status(200).next()
 }
 module.exports = LoginService
