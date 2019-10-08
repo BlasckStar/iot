@@ -3,7 +3,7 @@ const LoginService = require('./loginTask')
 LoginService.methods(['get', 'post', 'put', 'delete'])
 LoginService.updateOptions({ new: true })
 LoginService.before('post', verificacao)
-LoginService.before('delete', deleteCheck)
+//LoginService.before('delete', deleteCheck)
 
 function verificacao(req, res, next){
   LoginService.findOne({username: req.body.username}, function(err, user){
@@ -15,7 +15,7 @@ function verificacao(req, res, next){
     }
   })
 }
-
+  
 function loginCheck(req, res, next){
   LoginService.findOne({username: req.body.username}, function(err, user){
     if(err){
@@ -28,7 +28,8 @@ function loginCheck(req, res, next){
 }
 
 function deleteCheck(req, res, next){
-  res.send('got  a Delete request at /user')
+  res.send('got a Delete request at /user')
   return res.status(200).next()
+
 }
 module.exports = LoginService
