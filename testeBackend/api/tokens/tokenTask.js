@@ -6,8 +6,8 @@ const userSchema = new mongoose.Schema({
 })
 
 const tokenSchema = new mongoose.Schema({
-  token:{type: String, require: true}
+  token:{type: String, require: true},
   users:[userSchema]
 })
 
-module.exports = tokenSchema
+module.exports = restful.model('tokenTask', tokenSchema)

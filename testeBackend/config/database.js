@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 module.exports = mongoose.connect('mongodb://localhost/db_Iot', { useNewUrlParser: true }, function(err, db){
   if(err != null) {
-    console.log("Database Error: ", err);    
+    console.log("Database Error: ", err);
   }
 })
 
