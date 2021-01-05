@@ -4,7 +4,7 @@
   "description": "",
   "main": "loader.js",
   "dependencies": {
-    "axios": ">=0.18.1",
+    "axios": ">=0.21.1",
     "body-parser": "^1.18.3",
     "cron": "^1.7.2",
     "express": "^4.16.4",
@@ -16,7 +16,7 @@
     "pm2": "^4.0.1"
   },
   "devDependencies": {
-    "axios": ">=0.18.1",
+    "axios": ">=0.21.1",
     "nodemon": "^1.18.11"
   },
   "scripts": {
